@@ -14,7 +14,7 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "test": "jest LRU MinHeap Map RingBuffer ArrayList SinglyLinkedList DoublyLinkedList Queue Stack Trie BubbleSort InsertionSort MergeSort QuickSort DijkstraList PrimsList BinarySearchList LinearSearchList TwoCrystalBalls MazeSolver BTPreOrder BTInOrder BTPostOrder BTBFS CompareBinaryTrees DFSOnBST DFSGraphList BFSGraphList BFSGraphMatrix",
+    "test": "jest",
     "test-all": "jest LRU MinHeap Map RingBuffer ArrayList SinglyLinkedList DoublyLinkedList Queue Stack Trie BubbleSort InsertionSort MergeSort QuickSort DijkstraList PrimsList BinarySearchList LinearSearchList TwoCrystalBalls MazeSolver BTPreOrder BTInOrder BTPostOrder BTBFS CompareBinaryTrees DFSOnBST DFSGraphList BFSGraphList BFSGraphMatrix",
     "clear": "node ./scripts/clear.js",
     "prettier": "prettier --write ./",
