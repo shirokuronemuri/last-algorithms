@@ -1,3 +1,1 @@
-export default function insertion_sort(arr: number[]): void {
-
-}
+export default function insertion_sort(arr: number[]): void {}

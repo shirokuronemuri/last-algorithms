@@ -1,3 +1,1 @@
-export default function merge_sort(arr: number[]): void {
-
-}
+export default function merge_sort(arr: number[]): void {}

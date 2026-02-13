@@ -1,18 +1,9 @@
 export default class RingBuffer<T> {
-    public length: number;
+  public length: number;
 
-    
+  constructor() {}
 
-    constructor() {
-    }
-
-    push(item: T): void {
-
-}
-    get(idx: number): T | undefined {
-
-}
-    pop(): T | undefined {
-
-}
+  push(item: T): void {}
+  get(idx: number): T | undefined {}
+  pop(): T | undefined {}
 }
