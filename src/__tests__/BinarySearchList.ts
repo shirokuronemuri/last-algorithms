@@ -8,4 +8,7 @@ test('binary search array', function () {
   expect(binary_fn(foo, 69421)).toEqual(false);
   expect(binary_fn(foo, 1)).toEqual(true);
   expect(binary_fn(foo, 0)).toEqual(false);
+  expect(binary_fn([1], 1)).toEqual(true);
+  expect(binary_fn([1, 2], 1)).toEqual(true);
+  expect(binary_fn([1, 2], 2)).toEqual(true);
 });
