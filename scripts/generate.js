@@ -35,9 +35,7 @@ try {
 } catch (e) {}
 
 function generate_method(method) {
-  return `${method.name}(${method.args || ''}): ${method.return || 'void'} {
-
-}`;
+  return `${method.name}(${method.args || ''}): ${method.return || 'void'} {}`;
 }
 
 function generate_property(prop) {
@@ -54,15 +52,13 @@ function create_class(name, item) {
   fs.writeFileSync(
     path.join(day_path, `${name}.ts`),
     `export default class ${name}${item.generic || ''} {
-    ${(item.properties || []).map(generate_property).join('\n  ')}
+  ${(item.properties || []).map(generate_property).join('\n  ')}
 
-    ${(item.getters || []).map(generate_getter).join('\n  ')}
+  ${(item.getters || []).map(generate_getter).join('\n  ')}
 
-    constructor() {
-    }
+  constructor() {}
 
-    ${(item.methods || []).map(generate_method).join('\n  ')}
-}`,
+  ${(item.methods || []).map(generate_method).join('\n  ')}}`,
   );
 }
 

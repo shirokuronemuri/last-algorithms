@@ -17,7 +17,7 @@ module.exports.stats = function (config, day_path) {
     return acc;
   }, stats || {});
 
-  fs.writeFileSync(path.join(__dirname, '..', 'stats.json'), JSON.stringify(stats, null, 4));
+  fs.writeFileSync(path.join(__dirname, '..', 'stats.json'), JSON.stringify(stats, null, 2));
 };
 
 module.exports.package_json = function (config, day_path) {
@@ -27,7 +27,7 @@ module.exports.package_json = function (config, day_path) {
 
   fs.writeFileSync(
     path.join(__dirname, '..', 'package.json'),
-    JSON.stringify(package_json, null, 4),
+    JSON.stringify(package_json, null, 2),
   );
 };
 
@@ -35,12 +35,12 @@ module.exports.ts_config = function (set_to) {
   const ts_config = require('../tsconfig.json');
   ts_config.compilerOptions.paths['@code/*'] = [`${set_to}/*`];
 
-  fs.writeFileSync(path.join(__dirname, '..', 'tsconfig.json'), JSON.stringify(ts_config, null, 4));
+  fs.writeFileSync(path.join(__dirname, '..', 'tsconfig.json'), JSON.stringify(ts_config, null, 2));
 };
 
 module.exports.jest = function (set_to) {
   const jest = require('../.jest.config.json');
   jest.moduleNameMapper['@code/(.*)'] = [`<rootDir>/src/${set_to}/$1`];
 
-  fs.writeFileSync(path.join(__dirname, '..', '.jest.config.json'), JSON.stringify(jest, null, 4));
+  fs.writeFileSync(path.join(__dirname, '..', '.jest.config.json'), JSON.stringify(jest, null, 2));
 };
