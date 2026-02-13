@@ -11,7 +11,7 @@ module.exports = {
         "Stack",
         "Trie",
         "BubbleSort",
-        "InsetionSort",
+        "InsertionSort",
         "MergeSort",
         "QuickSort",
         "DijkstraList",
