@@ -4,7 +4,7 @@ type Node<T> = {
 };
 export default class SinglyLinkedList<T> {
   public length: number;
-  head?: Node<T>;
+  private head?: Node<T>;
 
   constructor() {
     this.length = 0;
