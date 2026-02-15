@@ -1,4 +1,8 @@
 export function test_list(list: List<number>): void {
+  list.append(12);
+  list.append(13);
+  list.removeAt(1);
+  list.removeAt(0);
   list.append(5);
   list.append(7);
   list.append(9);
