@@ -3,6 +3,15 @@ import RingBuffer from '@code/RingBuffer';
 test('RingBuffer', function () {
   const buffer = new RingBuffer<number>();
 
+  buffer.unshift(3);
+  buffer.unshift(4);
+  buffer.unshift(5);
+  expect(buffer.get(0)).toEqual(5);
+  expect(buffer.get(2)).toEqual(3);
+  expect(buffer.shift()).toEqual(5);
+  expect(buffer.shift()).toEqual(4);
+  expect(buffer.shift()).toEqual(3);
+
   buffer.push(5);
   expect(buffer.pop()).toEqual(5);
   expect(buffer.pop()).toEqual(undefined);

@@ -13,7 +13,7 @@ export default class RingBuffer<T> {
     this.arr = new Array(this.capacity);
   }
 
-  increaseCapacityIfNeeded() {
+  increaseCapacityIfNeeded(): void {
     if (this.head === this.tail && this.length === this.capacity) {
       const oldCapacity = this.capacity;
       this.capacity *= 2;
@@ -33,6 +33,23 @@ export default class RingBuffer<T> {
 
   get(idx: number): T | undefined {
     return this.arr[(this.head + idx) % this.capacity];
+  }
+
+  unshift(item: T): void {
+    this.increaseCapacityIfNeeded();
+    this.head = (this.head - 1 + this.capacity) % this.capacity;
+    this.arr[this.head] = item;
+    ++this.length;
+  }
+
+  shift(): T | undefined {
+    if (this.length === 0) {
+      return;
+    }
+    --this.length;
+    const value = this.arr[this.head];
+    this.head = (this.head + 1) % this.capacity;
+    return value;
   }
 
   push(item: T): void {
