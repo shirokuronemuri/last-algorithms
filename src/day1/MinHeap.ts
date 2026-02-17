@@ -29,7 +29,7 @@ export default class MinHeap {
     return value;
   }
 
-  heapifyUp(idx: number): void {
+  private heapifyUp(idx: number): void {
     if (idx === 0) {
       return;
     }
@@ -44,7 +44,7 @@ export default class MinHeap {
     }
   }
 
-  heapifyDown(idx: number): void {
+  private heapifyDown(idx: number): void {
     const lChild = this.leftChild(idx);
     const rChild = this.rightChild(idx);
 
@@ -66,14 +66,14 @@ export default class MinHeap {
     }
   }
 
-  parent(idx: number): number {
+  private parent(idx: number): number {
     return Math.floor((idx - 1) / 2);
   }
 
-  leftChild(idx: number): number {
+  private leftChild(idx: number): number {
     return idx * 2 + 1;
   }
-  rightChild(idx: number): number {
+  private rightChild(idx: number): number {
     return idx * 2 + 2;
   }
 }
